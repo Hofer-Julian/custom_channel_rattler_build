@@ -1,0 +1,23 @@
+context:
+  version: "1.0.0"
+
+package:
+  name: simple_package_b
+  version: ${{ version }}
+
+source:
+  path: "../simple_package_b"
+
+build:
+  noarch: python
+  script: pip install . -v
+
+requirements:
+  host:
+    - pip
+    - python >=3.7
+    - hatchling
+    - wheel
+
+tests:
+  - script: "simple-b"

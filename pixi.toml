@@ -7,6 +7,9 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+build-channel-a = { cmd = "rattler-build build", cwd = "simple_channel_a" }
+build-channel-b = { cmd = "rattler-build build", cwd = "simple_channel_b" }
+
 
 [dependencies]
 rattler-build = ">=0.21.0,<0.22"
