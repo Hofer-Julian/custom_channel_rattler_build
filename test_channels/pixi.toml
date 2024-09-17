@@ -1,0 +1,19 @@
+[project]
+authors = ["Julian Hofer <julianhofer@gnome.org>"]
+channels = [
+    "conda-forge",
+    "file:///var/home/julian/Projekte/testing_ground/custom_channel_rattler_build/simple_channel_a/output",
+    "file:///var/home/julian/Projekte/testing_ground/custom_channel_rattler_build/simple_channel_b/output",
+]
+name = "test_channels"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+simple-a = "simple-a"
+simple-b = "simple-b"
+start = {depends-on = ["simple-a", "simple-b"]}
+
+[dependencies]
+simple_package_a = "1.0.0"
+simple_package_b = "1.0.0"

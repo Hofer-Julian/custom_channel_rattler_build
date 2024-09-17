@@ -1,7 +1,6 @@
 [project]
 authors = ["Julian Hofer <julianhofer@gnome.org>"]
 channels = ["conda-forge"]
-description = "Add a short description here"
 name = "custom_channel"
 platforms = ["linux-64"]
 version = "0.1.0"
@@ -9,7 +8,7 @@ version = "0.1.0"
 [tasks]
 build-channel-a = { cmd = "rattler-build build", cwd = "simple_channel_a" }
 build-channel-b = { cmd = "rattler-build build", cwd = "simple_channel_b" }
-
+build-channels = { depends-on = ["build-channel-a", "build-channel-b"] }
 
 [dependencies]
 rattler-build = ">=0.21.0,<0.22"
